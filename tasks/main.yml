@@ -5,7 +5,6 @@
 - name : make sure that destination path exist
   ansible.builtin.file:
     path: "{{ item.vaultwarden_secret_file_dest | dirname }}"
-    dest: "{{ item.vaultwarden_secret_file_dest }}"
     owner: "{{ item.vaultwarden_secret_file_user_own }}"
     group: "{{ item.vaultwarden_secret_file_group_own }}"
     state: directory
