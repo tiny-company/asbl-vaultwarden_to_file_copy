@@ -19,7 +19,7 @@ files_copy_default_path: "{{ role_path }}/files"
 ## copy files list
 ## list of dict for files to copy from remote to dest
 vaultwarden_secret_list:
-  - vaultwarden_secret_key: 512c1e82-f0d3-453d-aae0-ae0c3a44c2e6
+  - vaultwarden_secret_key: 5416c1e82-f0d3-453d-aere0-ae0c3b44f2e6
     vaultwarden_secret_search_type: id
     vaultwarden_secret_field: note
     vaultwarden_secret_file_dest: "/tmp/test.env"
@@ -27,12 +27,4 @@ vaultwarden_secret_list:
     vaultwarden_secret_file_group_own: "root"
     vaultwarden_secret_file_rights: '0644'
     vaultwarden_secret_file_backup: true
-
-# copy_files_list:
-#   - file_local_path: "{{ files_copy_default_path }}/copy_file_example.txt"
-#     file_remote_path: "/opt/copy_file_example.txt"
-#     file_user_own: "root"
-#     file_group_own: "root"
-#     file_rights: '0644'
-#     file_backup: true
 
