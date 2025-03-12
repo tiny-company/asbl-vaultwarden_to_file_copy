@@ -10,14 +10,10 @@ root_user: root
 ## user to run this playbook
 vaultwarden_to_file_copy_user: root
 
-## ==================
-## copy files path
-## change this path to where you are storing locals files (default to role 'files' folder)
-files_copy_default_path: "{{ role_path }}/files"
 
 ## ==================
-## copy files list
-## list of dict for files to copy from remote to dest
+## vaultwarden secret list
+## list of dict for vaultwarden secret to copy to dest
 vaultwarden_secret_list:
   - vaultwarden_secret_key: 5416c1e82-f0d3-453d-aere0-ae0c3b44f2e6
     vaultwarden_secret_search_type: id

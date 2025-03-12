@@ -4,13 +4,13 @@
 
 - name : make sure that destination path exist
   ansible.builtin.file:
-    path: "{{ item.file_remote_path | dirname }}"
-    dest: "{{ item.file_remote_path }}"
-    owner: "{{ item.file_user_own }}"
-    group: "{{ item.file_group_own }}"
+    path: "{{ item.vaultwarden_secret_file_dest | dirname }}"
+    dest: "{{ item.vaultwarden_secret_file_dest }}"
+    owner: "{{ item.vaultwarden_secret_file_user_own }}"
+    group: "{{ item.vaultwarden_secret_file_group_own }}"
     state: directory
     mode: '0755'
-  loop: "{{ copy_files_list }}"
+  loop: "{{ vaultwarden_secret_list }}"
 
 - name: Get secret from vaultwarden and copy them to file on remote
   ansible.builtin.copy:
