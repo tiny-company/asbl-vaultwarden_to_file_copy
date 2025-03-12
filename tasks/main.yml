@@ -1,0 +1,25 @@
+---
+# Description : copy multiples file from local to remote
+# file : main.yml
+
+- name : make sure that destination path exist
+  ansible.builtin.file:
+    path: "{{ item.file_remote_path | dirname }}"
+    dest: "{{ item.file_remote_path }}"
+    owner: "{{ item.file_user_own }}"
+    group: "{{ item.file_group_own }}"
+    state: directory
+    mode: '0755'
+  loop: "{{ copy_files_list }}"
+
+- name: Get secret from vaultwarden and copy them to file on remote
+  ansible.builtin.copy:
+    dest: "{{ vaultwarden_secret_file_dest }}"
+    content: "{{ lookup('community.general.bitwarden', item.vaultwarden_secret_key, search=vaultwarden_secret_search_type, field=vaultwarden_secret_field) | first }}"
+    owner: "{{ item.vaultwarden_secret_file_user_own }}"
+    group: "{{ item.vaultwarden_secret_file_group_own }}"
+    mode: "{{ item.vaultwarden_secret_file_rights }}"
+    backup: "{{ item.vaultwarden_secret_file_backup | default(true) }}"
+    force: "{{ item.file_force | default(false) }}"
+  loop: "{{ vaultwarden_secret_list }}"
+

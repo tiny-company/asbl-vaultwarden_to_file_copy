@@ -1,0 +1,7 @@
+galaxy_info:
+  role_name: vaultwarden_to_file_copy
+  author: draed
+  description: This repo contain the ansible role to get vaultwarden secret, store them in files and finally copy files to destination
+  company: tiny company
+  license: license GPL-3.0-only
+  min_ansible_version: 2.14.1

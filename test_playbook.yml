@@ -1,0 +1,9 @@
+---
+
+- name: Get Vaultwarden secret store them in files and copy them to destination
+  hosts: all
+  roles:
+    - role: vaultwarden_to_file_copy
+      become: true
+      become_user: "{{ vaultwarden_to_file_copy_user }}"
+      tags: [vaultwarden_to_file_copy]

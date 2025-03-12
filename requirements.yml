@@ -1,0 +1,12 @@
+---
+
+roles:
+  - name: vaultwarden_to_file_copy
+    scm: git
+    src: https://github.com/tiny-company/asbl-vaultwarden_to_file_copy.git
+    version: main
+
+collections:
+  - name: community.general
+
+
