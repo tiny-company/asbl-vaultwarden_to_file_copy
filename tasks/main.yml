@@ -14,8 +14,8 @@
 
 - name: Get secret from vaultwarden and copy them to file on remote
   ansible.builtin.copy:
-    dest: "{{ vaultwarden_secret_file_dest }}"
-    content: "{{ lookup('community.general.bitwarden', item.vaultwarden_secret_key, search=vaultwarden_secret_search_type, field=vaultwarden_secret_field) | first }}"
+    dest: "{{ item.vaultwarden_secret_file_dest }}"
+    content: "{{ lookup('community.general.bitwarden', item.vaultwarden_secret_key, search=item.vaultwarden_secret_search_type, field=item.vaultwarden_secret_field) | first }}"
     owner: "{{ item.vaultwarden_secret_file_user_own }}"
     group: "{{ item.vaultwarden_secret_file_group_own }}"
     mode: "{{ item.vaultwarden_secret_file_rights }}"
