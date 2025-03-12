@@ -14,13 +14,13 @@ vaultwarden_to_file_copy_user: root
 ## ==================
 ## vaultwarden secret list
 ## list of dict for vaultwarden secret to copy to dest
-vaultwarden_secret_list:
-  - vaultwarden_secret_key: 5416c1e82-f0d3-453d-aere0-ae0c3b44f2e6
-    vaultwarden_secret_search_type: id
-    vaultwarden_secret_field: note
-    vaultwarden_secret_file_dest: "/tmp/test.env"
-    vaultwarden_secret_file_user_own: "root"
-    vaultwarden_secret_file_group_own: "root"
-    vaultwarden_secret_file_rights: '0644'
-    vaultwarden_secret_file_backup: true
+# vaultwarden_secret_list:
+#   - vaultwarden_secret_key: 5416c1e82-f0d3-453d-aere0-ae0c3b44f2e6
+#     vaultwarden_secret_search_type: id
+#     vaultwarden_secret_field: note
+#     vaultwarden_secret_file_dest: "/tmp/test.env"
+#     vaultwarden_secret_file_user_own: "root"
+#     vaultwarden_secret_file_group_own: "root"
+#     vaultwarden_secret_file_rights: '0644'
+#     vaultwarden_secret_file_backup: true
 

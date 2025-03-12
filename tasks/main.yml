@@ -19,6 +19,5 @@
     group: "{{ item.vaultwarden_secret_file_group_own }}"
     mode: "{{ item.vaultwarden_secret_file_rights }}"
     backup: "{{ item.vaultwarden_secret_file_backup | default(true) }}"
-    force: "{{ item.file_force | default(false) }}"
   loop: "{{ vaultwarden_secret_list }}"
 
